@@ -17,6 +17,13 @@ def separator(request, url_slug):
     if url_slug in category_urls:
         posts=Blog_news.objects.filter(news_category__url_slug=url_slug)
         return render(request, "main/home.html", {"News":posts})
+
+    if url_slug in [c.url_slug_news for c in Blog_news.objects.all()]:
+        article = Blog_news.objects.get(url_slug_news=url_slug)
+        return render(request, "main/article.html", {"article":article})
+        
+
+        
     return HttpResponse("Not a category")
 
 

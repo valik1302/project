@@ -1,0 +1,17 @@
+{% extends "main/head.html"%}
+{% block content %}
+    <br>
+    <div class="container">
+    <form method= "post">
+	    {% csrf_token %}
+	    {{form}}
+	    <button type="Submit"
+	    class="btn btn-outline-info">Логін</button>
+	
+    </form>
+    <p>Якщо ви ще не зареєстровані, перейдіть на сторінку  
+        <a href="/register"><strong>Реєстрації</strong></a></p>
+    
+</div>
+    {% endblock %}
+

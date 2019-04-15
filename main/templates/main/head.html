@@ -1,0 +1,28 @@
+{% load static %}
+<link rel = "styslesheet", href = ></link>
+{% load static %}
+<scrit scr = "{% static '/tinymce/js/prism/js' %}"></scrit>
+ <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> 
+<p>"Акція на трактор моделі BG_13207! Знижка у 30%!"</p>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">"Цікаві новини"</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="/logout">logout</a></li>
+        {% else %}
+        <li><a href="/register">Registration</a></li>
+        <li><a href="/login">login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  {% include "includes/messaging.html" %}
+{% block content %}
+{%endblock%}
+</body>

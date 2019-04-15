@@ -1,0 +1,16 @@
+{% extends "main/head.html"%}
+{% block content %}
+    <br>
+    <div class="container">
+    <form method= "post">
+	    {% csrf_token %}
+	    {{form}}
+	    <button type="Submit"
+	    class="btn btn-outline-info">Зареєструватись</button>
+	
+    </form>
+    <p>Якщо ви вже зареєстровані, перейдіть на сторінку, і нажміть <a onclick="M.toast({html: 'I am a toast'})" class="btn"><strong>Логін</strong></a></p>
+    
+</div>
+    {% endblock %}
+
